@@ -1,5 +1,5 @@
 export default class PolkarmarketsApiService {
-  public apiUrl: string = 'https://api.polkamarkets.com';
+  public apiUrl: string = 'http://localhost:4000';
 
   public async getMarkets(): Promise<any[]> {
     const url = `${this.apiUrl}/markets`;

@@ -4,6 +4,7 @@ async function addFile(file: any) {
   const url = `${polkamarketsApiUrl}/ipfs/add`;
 
   const form = new FormData();
+
   form.append('file', file);
 
   return api.post(url, form);

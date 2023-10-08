@@ -118,21 +118,24 @@ const marketsSlice = createSlice({
           type: MarketState | string;
           data: Market[];
         }>
-      ) => ({
-        ...state,
-        markets: uniqBy(
-          [...state.markets, ...action.payload.data],
-          (market: Market) => `${market.networkId}${market.id}`
-        ),
-        isLoading: {
-          ...state.isLoading,
-          [action.payload.type]: false
-        },
-        error: {
-          ...state.error,
-          [action.payload.type]: null
-        }
-      }),
+      ) => {
+        console.log('in redux success:', state, action);
+        return {
+          ...state,
+          markets: uniqBy(
+            [...state.markets, ...action.payload.data],
+            (market: Market) => `${market.networkId}${market.id}`
+          ),
+          isLoading: {
+            ...state.isLoading,
+            [action.payload.type]: false
+          },
+          error: {
+            ...state.error,
+            [action.payload.type]: null
+          }
+        };
+      },
       prepare(type: MarketState | string, data: Market[]) {
         return {
           payload: {
@@ -512,6 +515,10 @@ export function getMarkets(marketState: MarketState, networkId?: string) {
         state: marketState,
         networkId
       });
+
+      // FIXME: market data coming
+      console.log('getMarkets:', response.data);
+
       const { data } = response;
       dispatch(success(marketState, data));
     } catch (err) {

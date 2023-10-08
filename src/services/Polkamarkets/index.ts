@@ -57,7 +57,8 @@ function camelize<T extends object>(response: T): T {
 
 const polkamarketsApi = createApi({
   reducerPath: 'polkamarketsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: environment.POLKAMARKETS_API_URL }),
+  // baseQuery: fetchBaseQuery({ baseUrl: environment.POLKAMARKETS_API_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000' }),
   endpoints: builder => ({
     getMarketBySlug: builder.query<GetMarketBySlugData, GetMarketBySlugArgs>({
       query: ({ slug }) => `/markets/${slug}`,

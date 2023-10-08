@@ -1,7 +1,7 @@
 const { api } = require('./index');
 
 async function getLeaderboardGroupBySlug(groupSlug) {
-  const url = `https://api.polkamarkets.com/group_leaderboards/${groupSlug}`;
+  const url = `http://localhost:4000/group_leaderboards/${groupSlug}`;
   return api.get(url);
 }
 

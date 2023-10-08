@@ -23,7 +23,8 @@ async function getMarkets({ state, networkId }: GetMarketsByStateArgs) {
 
   getMarketsAbortControllers[state] = new AbortController();
 
-  const url = `${polkamarketsApiUrl}/markets`;
+  // const url = `${polkamarketsApiUrl}/markets`;
+  const url = `http://localhost:4000/markets`;
   return api.get<Market[]>(url, {
     params: pickBy(
       {

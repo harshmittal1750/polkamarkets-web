@@ -120,7 +120,13 @@ export default function MarketList({ filtersVisible }: MarketListProps) {
 
   useEffect(() => {
     markets.fetch();
+    console.log('use effect market:', markets);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    return () => {
+      console.log('market cleaner');
+    };
   }, []);
 
   return (

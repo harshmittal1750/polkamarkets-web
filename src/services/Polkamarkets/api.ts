@@ -11,6 +11,6 @@ api.interceptors.response.use(
 
 export default api;
 
-const { REACT_APP_POLKAMARKETS_API_URL } = process.env;
+const REACT_APP_POLKAMARKETS_API_URL = 'http://localhost:4000';
 
 export { REACT_APP_POLKAMARKETS_API_URL as polkamarketsApiUrl };

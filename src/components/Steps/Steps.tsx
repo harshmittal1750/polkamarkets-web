@@ -40,6 +40,8 @@ function Steps({ current, currentStepFields, steps, onChange }: StepsProps) {
   const isCurrentStepValid =
     currentStepFields.every(field => touched[field]) && isValid;
 
+  console.log(steps, 'steps');
+
   return (
     <div className={StepsClasses.root}>
       <div className={StepsClasses.steps}>
@@ -105,7 +107,12 @@ function Steps({ current, currentStepFields, steps, onChange }: StepsProps) {
               variant="subtle"
               color="default"
               onClick={() => onChange(current + 1)}
-              disabled={current === steps.length - 1 || !isCurrentStepValid}
+              // disabled={
+              //   current === steps.length - 1 ||
+              //   !isCurrentStepValid ||
+              //   current !== steps.length
+              // }
+              // disabled={current === steps.length - 1 || !isCurrentStepValid}
             >
               Next Step
             </Button>

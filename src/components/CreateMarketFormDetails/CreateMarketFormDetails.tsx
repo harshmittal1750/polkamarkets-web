@@ -75,13 +75,13 @@ function CreateMarketFormDetails() {
       </Feature>
       <div className={CreateMarketFormDetailsClasses.groupRow}>
         <DateInput label="Closing Date - Local Time" name="closingDate" />
-        <ImageUploadInput
+        {/* <ImageUploadInput
           label="Thumbnail"
           name="image"
           notUploadedActionLabel="Upload Image"
           uploadedActionLabel="Re-Upload"
           initialImagePreviewURL={uploadedImageURL}
-        />
+        /> */}
       </div>
     </div>
   );

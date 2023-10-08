@@ -16,7 +16,7 @@ function CreateMarket() {
   const [requiredBalance, setRequiredBalance] = useState(0);
 
   const needsBuyPolk = polkBalance < requiredBalance;
-
+  // TODO:remove setRequiredBalance
   useEffect(() => {
     (async function getMinimumRequiredBalance() {
       const polkamarketsService = new PolkamarketsService();

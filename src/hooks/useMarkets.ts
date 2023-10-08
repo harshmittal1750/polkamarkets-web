@@ -42,9 +42,12 @@ export default function useMarkets() {
     }
   });
 
+  console.log('markets:', markets);
+
   return {
     data: markets,
     fetch: useCallback(async () => {
+      // TODO: market dispatched
       dispatch(getMarkets('open'));
       dispatch(getMarkets('closed'));
       dispatch(getMarkets('resolved'));
