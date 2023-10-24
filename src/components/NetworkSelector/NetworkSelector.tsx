@@ -46,7 +46,7 @@ export default function NetworkSelector({
 
   return (
     <>
-      <Button
+      {/* <Button
         aria-label="Switch network"
         variant="outline"
         onClick={handleShow}
@@ -70,7 +70,7 @@ export default function NetworkSelector({
             </span>
           </>
         )}
-      </Button>
+      </Button> */}
       <Popover position="bottomLeft" onHide={handleHide} show={show}>
         {!theme.device.isDesktop && (
           <header className={networSelectorClasses.header}>
